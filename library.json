@@ -1,0 +1,21 @@
+{
+  "name": "TMC4210",
+  "keywords": "motion control, stepper, trinamic, motor",
+  "description": "Arduino Library for Trinamic TMC4210 IC. This IC is a motion controller for stepper motor drivers that will generate Step/Dir signals autonomously, following a given acceleration profile.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/tommag/TMC4210_Arduino.git"
+  },
+  "authors":
+  [
+    {
+      "name": "Tom Magnier",
+      "email": "tom@tmagnier.fr",
+      "maintainer": true
+    }
+  ],
+  "version": "1.0",
+  "frameworks": "arduino",
+  "platforms": "*"
+}
