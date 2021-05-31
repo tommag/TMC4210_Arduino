@@ -164,6 +164,12 @@ public:
    */
   void setStepDurationUs(int stepDuration);
 
+  /* Enable right reference switch */
+  void enableRightReferenceSwitch();
+
+  /* Enable / disable stop function of reference switches */
+  void setStopSwitchesEnabled(bool left, bool right);
+
   /* Ramp generator mode :
    * RAMP_MODE : positioning mode, with a trapezoidal profile set by setAcceleration(), setMaxSpeed() and setTargetPosition()
    * SOFT_MODE : same as positioning mode with an exponential deceleration profile

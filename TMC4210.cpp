@@ -74,6 +74,23 @@ void TMC4210::setStepDurationUs(int stepDuration)
   writeRegister(GLOBAL_PARAMETERS, reg.value);
 }
 
+void TMC4210::enableRightReferenceSwitch()
+{
+  GLOBAL_PARAMETERS_Register reg = {0};
+  reg.value = readRegister(GLOBAL_PARAMETERS);
+  reg.mot1r = true;
+  writeRegister(GLOBAL_PARAMETERS, reg.value);
+}
+
+void TMC4210::setStopSwitchesEnabled(bool left, bool right)
+{
+  RAMPMODE_REFCONF_Register reg = {0};
+  reg.value = readRegister(RAMPMODE_REFCONF);
+  reg.disable_stop_l = !left;
+  reg.disable_stop_r = !right;
+  writeRegister(RAMPMODE_REFCONF, reg.value);
+}
+
 void TMC4210::setRampMode(TMC4210::RampMode mode)
 {
   RAMPMODE_REFCONF_Register reg = {0};
