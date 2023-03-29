@@ -213,7 +213,7 @@ void TMC4210::setPulseRampDiv(long maxSpeed, long maxAccel)
 {
   /* See Trinamic AN016 */
   _pulseDiv = floor(log( (float)(((long long)_clockFreq * 2047LL) / ((long long)abs(maxSpeed) * 2048LL * 32LL)) ) / log(2.0)); //TODO ceil ?
-  _rampDiv = floor(log( (float)(((long long)_clockFreq * (long long)_clockFreq * 2047LL) / ((long long)abs(maxAccel) * (1LL << _pulseDiv+29)))) / log(2.0)); //TODO ceil() ?
+  _rampDiv = floor(log( (float)(((long long)_clockFreq * (long long)_clockFreq * 2047LL) / ((long long)abs(maxAccel) * (1LL << (_pulseDiv+29))))) / log(2.0)); //TODO ceil() ?
 
   #ifdef SERIAL_DEBUG
   Serial.print("PULSE_DIV: ");
